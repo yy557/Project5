@@ -10,8 +10,8 @@
         android:id="@+id/textView6"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="255dp"
-        android:layout_marginTop="117dp"
+        android:layout_marginStart="256dp"
+        android:layout_marginTop="108dp"
         android:text="TextView"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
