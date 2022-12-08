@@ -1,5 +1,6 @@
 package com.example.project5;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.CheckBox;
@@ -56,6 +57,16 @@ public class MainActivity extends AppCompatActivity {
             pizza = pizzaFactory.createMeatzza();
         }
 
+    }
+
+    public void showStoreOrderActivity(View view){
+        Intent intent = new Intent(this, StoreOrderActivity.class);
+        startActivity(intent);
+    }
+
+    public void showCurrentOrderActivity(View view){
+        Intent intent = new Intent(this, CurrentOrderActivity.class);
+        startActivity(intent);
     }
 
     public static String[] getToppingsList(){
