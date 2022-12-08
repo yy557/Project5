@@ -114,20 +114,19 @@
 
     <Button
         android:id="@+id/button6"
-        android:layout_width="101dp"
-        android:layout_height="69dp"
-        android:layout_marginStart="137dp"
-        android:layout_marginTop="649dp"
+        android:layout_width="102dp"
+        android:layout_height="78dp"
+        android:layout_marginStart="140dp"
         android:text="Place Order"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="@+id/button5" />
 
     <Button
         android:id="@+id/button7"
-        android:layout_width="137dp"
-        android:layout_height="71dp"
-        android:layout_marginStart="258dp"
-        android:layout_marginTop="644dp"
+        android:layout_width="138dp"
+        android:layout_height="77dp"
+        android:layout_marginStart="256dp"
+        android:layout_marginTop="648dp"
         android:text="Clear Order"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
