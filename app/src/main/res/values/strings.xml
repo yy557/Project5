@@ -1,3 +1,13 @@
 <resources>
     <string name="app_name">Project5</string>
+    <string-array name="itemNames">
+        <item>Chicago BBQ Chicken</item>
+        <item>Chicago Build Your Own</item>
+        <item>Chicago Deluxe</item>
+        <item>Chicago Meatzza</item>
+        <item>New York BBQ Chicken</item>
+        <item>New York Deluxe</item>
+        <item>New York Build Your Own</item>
+        <item>New York Meatzza</item>
+    </string-array>
 </resources>

@@ -29,10 +29,10 @@
 
     <RadioGroup
         android:id="@+id/radioGroup3"
-        android:layout_width="166dp"
+        android:layout_width="86dp"
         android:layout_height="124dp"
-        android:layout_marginStart="36dp"
-        android:layout_marginTop="128dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="112dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
@@ -79,10 +79,11 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.recyclerview.widget.RecyclerView
-        android:layout_width="50dp"
-        android:layout_height="210dp"
-        android:layout_marginStart="280dp"
-        android:layout_marginTop="107dp"
+        android:id="@+id/rcView_menu"
+        android:layout_width="266dp"
+        android:layout_height="272dp"
+        android:layout_marginStart="136dp"
+        android:layout_marginTop="64dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -126,8 +127,8 @@
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="35dp"
-        android:layout_marginTop="288dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="268dp"
         android:text="Crust"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -136,8 +137,8 @@
         android:id="@+id/textView3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="93dp"
-        android:layout_marginTop="288dp"
+        android:layout_marginStart="60dp"
+        android:layout_marginTop="268dp"
         android:text="TextView"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -146,8 +147,8 @@
         android:id="@+id/textView4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="36dp"
-        android:layout_marginTop="328dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="308dp"
         android:text="Pizza Price"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -156,8 +157,8 @@
         android:id="@+id/textView16"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="130dp"
-        android:layout_marginTop="330dp"
+        android:layout_marginStart="72dp"
+        android:layout_marginTop="308dp"
         android:text="TextView"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
