@@ -28,7 +28,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <RadioGroup
-        android:id="@+id/radioGroup3"
+        android:id="@+id/radioGroupPizzaSize"
         android:layout_width="86dp"
         android:layout_height="124dp"
         android:layout_marginStart="16dp"

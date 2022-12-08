@@ -1,9 +1,9 @@
 package com.example.project5;
 
+import android.app.AlertDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.CheckBox;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 
@@ -19,6 +19,7 @@ import java.util.ArrayList;
  */
 public class MainActivity extends AppCompatActivity {
 
+    private static String selectedPizza = "Chicago BBQ Chicken";
     private ArrayList<Item> items = new ArrayList<>();
     private int [] itemImages = {R.drawable.chicagobbqchicken, R.drawable.chicagobuildyourown, R.drawable.chicagodeluxe,
             R.drawable.chicagomeatzza, R.drawable.nybbqchicken, R.drawable.nydeluxe, R.drawable.nybuildyourown,
@@ -55,15 +56,37 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-
+    public static void setSelectedPizza(String s){
+        selectedPizza = s;
+    }
 
 
 
     public void order(View view){
         PizzaFactory pizzaFactory = null;
         Pizza pizza = null;
-
-
+        if(selectedPizza.startsWith("Chicago")){
+            pizzaFactory = new ChicagoPizza();
+        }else if(selectedPizza.startsWith("New York")){
+            pizzaFactory = new NYPizza();
+        }
+        if(selectedPizza.endsWith("Build Your Own")){
+            pizza = pizzaFactory.createBuildYourOwn();
+        }else if(selectedPizza.endsWith("Deluxe")){
+            pizza = pizzaFactory.createDeluxe();
+        }else if(selectedPizza.endsWith("BBQ Chicken")){
+            pizza = pizzaFactory.createBBQChicken();
+        }else if(selectedPizza.endsWith("Meatzza")){
+            pizza = pizzaFactory.createMeatzza();
+        }
+        pizzaSize = findViewById(R.id.radioGroupPizzaSize);
+        pizza.setSize(Size.valueOf(((String)((RadioButton) pizzaSize.findViewById(pizzaSize.getCheckedRadioButtonId())).getText()).toUpperCase()));
+        //CurrentOrderActivity.addToOrder(pizza);
+        AlertDialog.Builder alert = new AlertDialog.Builder(this);
+        alert.setTitle("Add to order");
+        alert.setMessage("Pizza added to order");
+        AlertDialog dialog = alert.create();
+        dialog.show();
     }
 
     public void showStoreOrderActivity(View view){
@@ -79,6 +102,6 @@ public class MainActivity extends AppCompatActivity {
     public static String[] getToppingsList(){
         ArrayList<String> list = new ArrayList<>();
 
-        return (String[]) list.toArray();
+        return list.toArray(new String[0]);
     }
 }
