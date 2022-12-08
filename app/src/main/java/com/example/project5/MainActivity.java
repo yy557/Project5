@@ -8,6 +8,8 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
 
@@ -17,14 +19,45 @@ import java.util.ArrayList;
  */
 public class MainActivity extends AppCompatActivity {
 
-
+    private ArrayList<Item> items = new ArrayList<>();
+    private int [] itemImages = {R.drawable.chicagobbqchicken, R.drawable.chicagobuildyourown, R.drawable.chicagodeluxe,
+            R.drawable.chicagomeatzza, R.drawable.nybbqchicken, R.drawable.nydeluxe, R.drawable.nybuildyourown,
+            R.drawable.nymeatzza};
     RadioGroup pizzaSize;
     //load the layout file
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        RecyclerView rcview = findViewById(R.id.rcView_menu);
+        setupMenuItems(); //add the list of items to the ArrayList
+        ItemsAdapter adapter = new ItemsAdapter(this, items); //create the adapter
+        rcview.setAdapter(adapter); //bind the list of items to the RecyclerView
+        //use the LinearLayout for the RecyclerView
+        rcview.setLayoutManager(new LinearLayoutManager(this));
     }
+
+    private void setupMenuItems() {
+        /*
+         * Item names are defined in a String array under res/string.xml.
+         * Your item names might come from other places, such as an external file, or the database
+         * from the backend.
+         */
+        String [] itemNames = getResources().getStringArray(R.array.itemNames);
+        /* Add the items to the ArrayList.
+         * Note that I use hardcoded prices for demo purpose. This should be replace by other
+         * data sources.
+         */
+        for (int i = 0; i < itemNames.length; i++) {
+            items.add(new Item(itemNames[i], itemImages[i]));
+        }
+    }
+
+
+
+
+
 
     public void order(View view){
         PizzaFactory pizzaFactory = null;
