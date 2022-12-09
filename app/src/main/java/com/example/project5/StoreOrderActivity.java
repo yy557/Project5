@@ -1,7 +1,10 @@
 package com.example.project5;
 
 import android.os.Bundle;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.Spinner;
 import android.widget.TextView;
 
@@ -17,7 +20,9 @@ public class StoreOrderActivity extends AppCompatActivity {
     private static final double TAX_RATE = 0.0625;
 
     private static StoreOrders storeOrders = new StoreOrders();
+    private static ArrayList<String> orderNumbers = new ArrayList<String>();
 
+    Button cancelOrder;
     TextView pizzaListView, orderTotal;
     Spinner ordNum;
 
@@ -27,13 +32,65 @@ public class StoreOrderActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_store_order);
 
+        orderNumbers.add("None");
+
+        //test block
+        Pizza pizza = new Meatzza();
+        pizza.setSize(Size.LARGE);
+        Order ord = new Order();
+        ord.add(pizza);
+        storeOrders.add(ord);
+        orderNumbers.add("1");
+        //end test block
+
+        cancelOrder = findViewById(R.id.cancelOrder);
         pizzaListView = findViewById(R.id.pizzaListView);
         orderTotal = findViewById(R.id.orderTotal);
         ordNum = findViewById(R.id.ordNum);
 
-        ArrayAdapter<CharSequence> adapter=ArrayAdapter.createFromResource(this, R.array.orderNumbers, android.R.layout.simple_spinner_item);
+        ArrayAdapter adapter = new ArrayAdapter(this, android.R.layout.simple_spinner_item, orderNumbers);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_item);
         ordNum.setAdapter(adapter);
+
+        ordNum.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parentView, View selectedItemView, int position, long id) {
+                displayOrderInListView();
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parentView) {
+                return;
+            }
+        });
+    }
+
+    /**
+     * Adds an Order to the static StoreOrder object
+     * @param order the Order being added
+     */
+    public static void addToOrder(Order order){
+        storeOrders.add(order);
+        orderNumbers.add(Integer.toString(order.getOrderNumber()));
+    }
+
+    /**
+     * Removes an order from the store order
+     */
+    void removeOrder(View v) {
+        String selectedOrder = ordNum.getSelectedItem().toString();
+        if(selectedOrder.equals("None"))
+            return;
+        int orderNumber = Integer.parseInt(selectedOrder);
+        Order obj = null;
+        for(Order ord : storeOrders.getOrders()) {
+            if(ord.getOrderNumber() == orderNumber)
+                obj = ord;
+        }
+        storeOrders.remove(obj);
+        pizzaListView.setText("");
+        orderTotal.setText("");
+        orderNumbers.remove(ordNum.getSelectedItem().toString());
     }
 
     /**

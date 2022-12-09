@@ -10,10 +10,10 @@
         <item>New York Build Your Own</item>
         <item>New York Meatzza</item>
     </string-array>
-    <string name="order_numbers">dropDownMenu</string>
-    <string-array name="orderNumbers">
-        <item>None</item>
-    </string-array>
+<!--    <string name="order_numbers">dropDownMenu</string>-->
+<!--    <string-array name="orderNumbers">-->
+<!--        <item>None</item>-->
+<!--    </string-array>-->
     <string name="cancel_order">Cancel Order</string>
     <string name="order_number">Order Number</string>
     <string name="pizza_manager">Pizza Manager</string>
