@@ -12,7 +12,7 @@ public class ChicagoPizza implements PizzaFactory{
     @Override
     public Pizza createDeluxe() {
         Pizza newPizza = new Deluxe();
-        String[] toppings = MainActivity.getToppingsList();
+        String[] toppings = OrderPizzaActivity.getToppingsList();
         for(int i = 0; i < toppings.length; i++){
             newPizza.add(Topping.valueOf(toppings[i].toUpperCase()));
         }
@@ -26,7 +26,7 @@ public class ChicagoPizza implements PizzaFactory{
     @Override
     public Pizza createMeatzza() {
         Pizza newPizza = new Meatzza();
-        String[] toppings = MainActivity.getToppingsList();
+        String[] toppings = OrderPizzaActivity.getToppingsList();
         for(int i = 0; i < toppings.length; i++){
             newPizza.add(Topping.valueOf(toppings[i].toUpperCase()));
         }
@@ -40,7 +40,7 @@ public class ChicagoPizza implements PizzaFactory{
     @Override
     public Pizza createBBQChicken() {
         Pizza newPizza = new BBQChicken();
-        String[] toppings = MainActivity.getToppingsList();
+        String[] toppings = OrderPizzaActivity.getToppingsList();
         for(int i = 0; i < toppings.length; i++){
             newPizza.add(Topping.valueOf(toppings[i].toUpperCase()));
         }
@@ -55,7 +55,7 @@ public class ChicagoPizza implements PizzaFactory{
     @Override
     public Pizza createBuildYourOwn() {
         Pizza newPizza = new BuildYourOwn();
-        String[] toppings = MainActivity.getToppingsList();
+        String[] toppings = OrderPizzaActivity.getToppingsList();
         for(int i = 0; i < toppings.length; i++){
             newPizza.add(Topping.valueOf(toppings[i].toUpperCase()));
         }

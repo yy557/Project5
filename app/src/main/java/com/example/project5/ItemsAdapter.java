@@ -1,16 +1,13 @@
 package com.example.project5;
 
-import android.app.AlertDialog;
 import android.content.Context;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.view.LayoutInflater;
+
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.constraintlayout.widget.ConstraintLayout;
@@ -32,7 +29,6 @@ import java.util.ArrayList;
  */
 class ItemsAdapter extends RecyclerView.Adapter<ItemsAdapter.ItemsHolder>{
 
-    private int selectedPos = 0;
 
     private Context context; //need the context to inflate the layout
     private ArrayList<Item> items; //need the data binding to each row of RecyclerView
@@ -54,7 +50,6 @@ class ItemsAdapter extends RecyclerView.Adapter<ItemsAdapter.ItemsHolder>{
         //inflate the row layout for the items
         LayoutInflater inflater = LayoutInflater.from(context);
         View view = inflater.inflate(R.layout.row_view, parent, false);
-
         return new ItemsHolder(view);
     }
 
@@ -70,7 +65,7 @@ class ItemsAdapter extends RecyclerView.Adapter<ItemsAdapter.ItemsHolder>{
         holder.tv_name.setText(items.get(position).getItemName());
         holder.im_item.setImageResource(items.get(position).getImage());
 
-        holder.itemView.setSelected(selectedPos == position);
+
     }
 
     /**
@@ -103,15 +98,12 @@ class ItemsAdapter extends RecyclerView.Adapter<ItemsAdapter.ItemsHolder>{
             parentLayout.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    /**
-                    Intent intent = new Intent(itemView.getContext(), ItemSelectedActivity.class);
+
+                    Intent intent = new Intent(itemView.getContext(), OrderPizzaActivity.class);
                     intent.putExtra("ITEM", tv_name.getText());
                     itemView.getContext().startActivity(intent);
-                     */
-                    notifyItemChanged(selectedPos);
-                    selectedPos = getLayoutPosition();
-                    notifyItemChanged(selectedPos);
-                    MainActivity.setSelectedPizza((String) tv_name.getText());
+
+
                 }
             });
         }

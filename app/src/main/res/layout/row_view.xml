@@ -8,8 +8,8 @@
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cardView"
-        android:layout_width="234dp"
-        android:layout_height="92dp"
+        android:layout_width="412dp"
+        android:layout_height="146dp"
         android:background="@color/black"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -23,20 +23,20 @@
 
             <TextView
                 android:id="@+id/tv_flavor"
-                android:layout_width="115dp"
-                android:layout_height="41dp"
+                android:layout_width="240dp"
+                android:layout_height="98dp"
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="16dp"
                 android:textColor="@color/white"
-                android:textSize="16sp"
+                android:textSize="24sp"
                 android:textStyle="bold"
                 app:layout_constraintStart_toEndOf="@+id/im_item"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <ImageView
                 android:id="@+id/im_item"
-                android:layout_width="93dp"
-                android:layout_height="88dp"
+                android:layout_width="129dp"
+                android:layout_height="145dp"
                 android:contentDescription="TODO"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
