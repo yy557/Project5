@@ -10,7 +10,26 @@
         <item>New York Build Your Own</item>
         <item>New York Meatzza</item>
     </string-array>
+    <string name="order_numbers">dropDownMenu</string>
+    <string-array name="orderNumbers">
+        <item>None</item>
+    </string-array>
     <string name="cancel_order">Cancel Order</string>
     <string name="order_number">Order Number</string>
-    <string name="order_total">Order Total</string>
+    <string name="pizza_manager">Pizza Manager</string>
+    <string name="add_to_order">Add To Order</string>
+    <string name="small">Small</string>
+    <string name="medium">Medium</string>
+    <string name="large">Large</string>
+    <string name="store_orders">Store Orders</string>
+    <string name="current_orders">Current Orders</string>
+    <string name="add_topping">Add topping</string>
+    <string name="remove_topping">Remove topping</string>
+    <string name="crust">Crust</string>
+    <string name="textview">TextView</string>
+    <string name="pizza_price">Pizza Price</string>
+    <string name="available_toppings">Available Toppings</string>
+    <string name="selected_toppings">Selected Toppings</string>
+    <string name="order_number_label">Order Number:</string>
+    <string name="order_total_label">Order Total:</string>
 </resources>
