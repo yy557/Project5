@@ -10,4 +10,7 @@
         <item>New York Build Your Own</item>
         <item>New York Meatzza</item>
     </string-array>
+    <string name="cancel_order">Cancel Order</string>
+    <string name="order_number">Order Number</string>
+    <string name="order_total">Order Total</string>
 </resources>
