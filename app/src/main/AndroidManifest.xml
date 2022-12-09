@@ -22,17 +22,17 @@
         </activity>
         <activity
             android:name=".OrderPizzaActivity"
-            android:label="This is the 2nd activity"
+            android:label="Order Pizza"
             android:parentActivityName=".MainMenuActivity"
             android:exported="false" />
         <activity
             android:name=".StoreOrderActivity"
-            android:label="This is the 2nd activity"
+            android:label="Store Orders"
             android:parentActivityName=".MainMenuActivity"
             android:exported="false" />
         <activity
             android:name=".CurrentOrderActivity"
-            android:label="This is the 2nd activity"
+            android:label="Current Order"
             android:parentActivityName=".MainMenuActivity"
             android:exported="false" />
     </application>
