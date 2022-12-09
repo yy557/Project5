@@ -88,7 +88,6 @@ class ItemsAdapter extends RecyclerView.Adapter<ItemsAdapter.ItemsHolder>{
     public class ItemsHolder extends RecyclerView.ViewHolder {
         private TextView tv_name, tv_price;
         private ImageView im_item;
-        private Button btn_add;
         private ConstraintLayout parentLayout; //this is the row layout
 
         public ItemsHolder(@NonNull View itemView) {
