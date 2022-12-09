@@ -7,16 +7,17 @@
     tools:context=".CurrentOrderActivity">
 
     <TextView
-        android:id="@+id/textView6"
+        android:id="@+id/textViewOrderNumber"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="256dp"
+        android:layout_marginStart="188dp"
         android:layout_marginTop="108dp"
         android:text="TextView"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <ListView
+        android:id="@+id/pizzasList"
         android:layout_width="410dp"
         android:layout_height="330dp"
         android:layout_marginStart="1dp"
@@ -25,7 +26,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/textView7"
+        android:id="@+id/textViewSubtotal"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="247dp"
@@ -35,7 +36,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/textView8"
+        android:id="@+id/textViewSalesTax"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="247dp"
@@ -45,7 +46,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/textView9"
+        android:id="@+id/textViewOrderTotal"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="247dp"
@@ -60,6 +61,7 @@
         android:layout_height="79dp"
         android:layout_marginStart="21dp"
         android:layout_marginTop="647dp"
+        android:onClick="removePizza"
         android:text="Remove Pizza"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -69,6 +71,7 @@
         android:layout_width="102dp"
         android:layout_height="78dp"
         android:layout_marginStart="140dp"
+        android:onClick="placeOrder"
         android:text="Place Order"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/button5" />
@@ -79,6 +82,7 @@
         android:layout_height="77dp"
         android:layout_marginStart="256dp"
         android:layout_marginTop="648dp"
+        android:onClick="clearOrder"
         android:text="Clear Order"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
