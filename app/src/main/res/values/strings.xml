@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Project5</string>
+    <string name="app_name">Project 5</string>
     <string-array name="itemNames">
         <item>Chicago Build Your Own</item>
         <item>Chicago BBQ Chicken</item>
