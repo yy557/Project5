@@ -96,7 +96,7 @@ public class StoreOrderActivity extends AppCompatActivity {
     /**
      * Displays the proper information for the selected order on the Store Order page
      */
-    void displayOrderInListView() {
+    private void displayOrderInListView() {
         pizzaListView.setText("");
         orderTotal.setText("");
         String selectedOrder = ordNum.getSelectedItem().toString();
