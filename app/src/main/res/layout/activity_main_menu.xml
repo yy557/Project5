@@ -13,7 +13,7 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="612dp"
         android:onClick="showStoreOrderActivity"
-        android:text="Store Orders"
+        android:text="@string/store_orders_main"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -24,7 +24,7 @@
         android:layout_marginStart="232dp"
         android:layout_marginTop="612dp"
         android:onClick="showCurrentOrderActivity"
-        android:text="Current Orders"
+        android:text="@string/current_orders_main"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
