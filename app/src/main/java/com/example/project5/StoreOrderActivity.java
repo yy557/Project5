@@ -114,7 +114,7 @@ public class StoreOrderActivity extends AppCompatActivity {
             Pizza pizza = pizzas.get(i);
             total += pizza.price();
             String string = getPizzaString(pizza);
-            pizzaListView.append(string + "\n");
+            pizzaListView.append(string + "\n\n");
         }
         orderTotal.setText(String.valueOf(((double) ((int) ((total+ total * TAX_RATE)*100)))/100.0));
     }
