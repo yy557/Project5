@@ -2,6 +2,7 @@ package com.example.project5;
 
 import android.app.AlertDialog;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -27,10 +28,10 @@ public class CurrentOrderActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_current_order);
-        displayOrdersInListView();
         adapter = new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1, pizzasListArray);
         pizzasList = findViewById(R.id.pizzasList);
         pizzasList.setAdapter(adapter);
+        displayOrdersInListView();
 
     }
 
@@ -45,8 +46,8 @@ public class CurrentOrderActivity extends AppCompatActivity {
     /**
      * Adds the order to the store orders
      */
-    private void placeOrder(){
-        //StoreOrderActivity.addToOrder(order);
+    public void placeOrder(View view){
+        StoreOrderActivity.addToOrder(order);
         AlertDialog.Builder alert = new AlertDialog.Builder(this);
         alert.setTitle("Information");
         alert.setMessage("Placed Order");
@@ -60,18 +61,19 @@ public class CurrentOrderActivity extends AppCompatActivity {
     /**
      * Removes all pizza from the order
      */
-   private void clearOrder(){
+   public void clearOrder(View view){
         ArrayList<Pizza> pizzas = order.getPizzas();
         while(pizzas.size() > 0){
             pizzas.remove(0);
         }
         displayOrdersInListView();
+
     }
 
     /**
      * Removes the selected pizza from the order
      */
-    private void removePizza(){
+    public void removePizza(View view){
         pizzasList = findViewById(R.id.pizzasList);
         if(pizzasList.getSelectedItemPosition() != -1) {
             ArrayList<Pizza> pizzas = order.getPizzas();
@@ -84,6 +86,7 @@ public class CurrentOrderActivity extends AppCompatActivity {
      * Displays all the pizzas in the order using the listview
      */
     private void displayOrdersInListView(){
+        adapter.clear();
         pizzasList = findViewById(R.id.pizzasList);
         pizzasListArray = new ArrayList<>();
         ArrayList<Pizza> pizzas = order.getPizzas();
@@ -93,7 +96,7 @@ public class CurrentOrderActivity extends AppCompatActivity {
         for(int i = 0; i < pizzas.size(); i++){
             Pizza pizza = pizzas.get(i);
             subtotal += pizza.price();
-            pizzasListArray.add(getPizzaString(pizza));
+            adapter.add(getPizzaString(pizza));
         }
         textViewSubtotal = findViewById(R.id.textViewSubtotal);
         textViewSubtotal.setText(String.valueOf(((double) ((int) (subtotal*100)))/100.0));
@@ -101,6 +104,7 @@ public class CurrentOrderActivity extends AppCompatActivity {
         textViewSalesTax.setText(String.valueOf(((double) ((int) ((subtotal * TAX_RATE)*100)))/100.0));
         textViewOrderTotal = findViewById(R.id.textViewOrderTotal);
         textViewOrderTotal.setText(String.valueOf(((double) ((int) ((subtotal+ subtotal * TAX_RATE)*100)))/100.0));
+
     }
 
     /**

@@ -32,16 +32,7 @@ public class StoreOrderActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_store_order);
 
-        orderNumbers.add("None");
 
-        //test block
-        Pizza pizza = new Meatzza();
-        pizza.setSize(Size.LARGE);
-        Order ord = new Order();
-        ord.add(pizza);
-        storeOrders.add(ord);
-        orderNumbers.add("1");
-        //end test block
 
         cancelOrder = findViewById(R.id.cancelOrder);
         pizzaListView = findViewById(R.id.pizzaListView);
@@ -77,7 +68,7 @@ public class StoreOrderActivity extends AppCompatActivity {
     /**
      * Removes an order from the store order
      */
-    void removeOrder(View v) {
+    public void removeOrder(View v) {
         String selectedOrder = ordNum.getSelectedItem().toString();
         if(selectedOrder.equals("None"))
             return;
@@ -150,4 +141,6 @@ public class StoreOrderActivity extends AppCompatActivity {
 
         return string;
     }
+
+
 }
