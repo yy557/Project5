@@ -16,14 +16,17 @@ import java.util.ArrayList;
  * @author Lily Chang
  */
 public class CurrentOrderActivity extends AppCompatActivity {
-
     private static final double TAX_RATE = 0.0625;
     private static Order order = new Order();
     private static ArrayList<String> pizzasListArray = new ArrayList<>();
     private ListView pizzasList;
     private ArrayAdapter<String> adapter;
     private TextView textViewOrderNumber, textViewSalesTax, textViewSubtotal, textViewOrderTotal;
-    //load the layout file
+
+    /**
+     * Creates the Current Order page
+     * @param savedInstanceState
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

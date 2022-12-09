@@ -23,17 +23,15 @@ import java.util.Arrays;
  * @author Lily Chang
  */
 public class MainMenuActivity extends AppCompatActivity{
-
-
-
     private ArrayList<Item> items = new ArrayList<>();
     private int [] itemImages = {R.drawable.chicagobuildyourown, R.drawable.chicagobbqchicken, R.drawable.chicagodeluxe,
             R.drawable.chicagomeatzza, R.drawable.nybbqchicken, R.drawable.nydeluxe, R.drawable.nybuildyourown,
             R.drawable.nymeatzza};
 
-
-
-    //load the layout file
+    /**
+     * Creates the Main Menu Page
+     * @param savedInstanceState
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -45,9 +43,6 @@ public class MainMenuActivity extends AppCompatActivity{
         rcview.setLayoutManager(new LinearLayoutManager(this));
 
     }
-
-
-
 
     private void setupMenuItems() {
         /*
@@ -65,12 +60,6 @@ public class MainMenuActivity extends AppCompatActivity{
         }
     }
 
-
-
-
-
-
-
     public void showStoreOrderActivity(View view){
         Intent intent = new Intent(this, StoreOrderActivity.class);
         startActivity(intent);
@@ -80,8 +69,4 @@ public class MainMenuActivity extends AppCompatActivity{
         Intent intent = new Intent(this, CurrentOrderActivity.class);
         startActivity(intent);
     }
-
-
-
-
 }

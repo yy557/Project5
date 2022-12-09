@@ -24,7 +24,6 @@ import java.util.Arrays;
  * @author Lily Chang
  */
 public class OrderPizzaActivity extends AppCompatActivity{
-
     private ListView listViewAvailableToppings, listViewSelectedToppings;
     private ArrayAdapter<String> adapter2, adapter3;
     private static ArrayList<String> availableToppingsList = new ArrayList<>(Arrays.asList("Sausage", "Pepperoni", "Onion", "GreenPepper", "Onion", "Mushroom", "BBQChicken", "Provolone", "Cheddar", "Beef", "Ham", "Broccoli", "Potato", "Cucumber"));
@@ -35,7 +34,10 @@ public class OrderPizzaActivity extends AppCompatActivity{
             R.drawable.chicagomeatzza, R.drawable.nybbqchicken, R.drawable.nydeluxe, R.drawable.nybuildyourown,
             R.drawable.nymeatzza};
 
-    //load the layout file
+    /**
+     * Creates the Order Pizza page
+     * @param savedInstanceState
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
