@@ -26,7 +26,10 @@ public class StoreOrderActivity extends AppCompatActivity {
     TextView pizzaListView, orderTotal;
     Spinner ordNum;
 
-    //load the layout file
+    /**
+     * Creates the Store Orders page
+     * @param savedInstanceState
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
