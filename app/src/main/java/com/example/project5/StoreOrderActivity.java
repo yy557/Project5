@@ -21,7 +21,7 @@ public class StoreOrderActivity extends AppCompatActivity {
 
     private static StoreOrders storeOrders = new StoreOrders();
     private static ArrayList<String> orderNumbers = new ArrayList<String>();
-
+    private ArrayAdapter adapter;
     Button cancelOrder;
     TextView pizzaListView, orderTotal;
     Spinner ordNum;
@@ -39,7 +39,7 @@ public class StoreOrderActivity extends AppCompatActivity {
         orderTotal = findViewById(R.id.orderTotal);
         ordNum = findViewById(R.id.ordNum);
 
-        ArrayAdapter adapter = new ArrayAdapter(this, android.R.layout.simple_spinner_item, orderNumbers);
+        adapter = new ArrayAdapter(this, android.R.layout.simple_spinner_item, orderNumbers);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_item);
         ordNum.setAdapter(adapter);
 
@@ -69,9 +69,10 @@ public class StoreOrderActivity extends AppCompatActivity {
      * Removes an order from the store order
      */
     public void removeOrder(View v) {
-        String selectedOrder = ordNum.getSelectedItem().toString();
-        if(selectedOrder.equals("None"))
+        if(ordNum.getSelectedItem() == null){
             return;
+        }
+        String selectedOrder = ordNum.getSelectedItem().toString();
         int orderNumber = Integer.parseInt(selectedOrder);
         Order obj = null;
         for(Order ord : storeOrders.getOrders()) {
@@ -82,6 +83,7 @@ public class StoreOrderActivity extends AppCompatActivity {
         pizzaListView.setText("");
         orderTotal.setText("");
         orderNumbers.remove(ordNum.getSelectedItem().toString());
+        adapter.notifyDataSetChanged();
     }
 
     /**
@@ -90,9 +92,10 @@ public class StoreOrderActivity extends AppCompatActivity {
     private void displayOrderInListView() {
         pizzaListView.setText("");
         orderTotal.setText("");
-        String selectedOrder = ordNum.getSelectedItem().toString();
-        if(selectedOrder.equals("None"))
+        if(ordNum.getSelectedItem() == null){
             return;
+        }
+        String selectedOrder = ordNum.getSelectedItem().toString();
         int orderNumber = Integer.parseInt(selectedOrder);
         Order obj = null;
         for(Order ord : storeOrders.getOrders()) {
