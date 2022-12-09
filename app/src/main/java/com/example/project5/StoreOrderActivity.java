@@ -7,6 +7,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -87,6 +88,7 @@ public class StoreOrderActivity extends AppCompatActivity {
         orderTotal.setText("");
         orderNumbers.remove(ordNum.getSelectedItem().toString());
         adapter.notifyDataSetChanged();
+        Toast.makeText(getApplicationContext(), "Order Removed", Toast.LENGTH_LONG).show();
     }
 
     /**

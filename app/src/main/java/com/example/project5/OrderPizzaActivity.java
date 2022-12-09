@@ -1,9 +1,7 @@
 package com.example.project5;
 
 import android.app.AlertDialog;
-import android.content.Intent;
 import android.os.Bundle;
-import android.provider.MediaStore;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -13,15 +11,14 @@ import android.widget.RadioGroup;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
+
 
 import java.util.ArrayList;
 import java.util.Arrays;
 
 /**
- * This is to demo the Intent class, which you can use to start another Activity.
- * @author Lily Chang
+ * The activity used to order pizzas
+ * @author Jake Michalowicz, Young Ye
  */
 public class OrderPizzaActivity extends AppCompatActivity{
     private ListView listViewAvailableToppings, listViewSelectedToppings;
@@ -57,9 +54,7 @@ public class OrderPizzaActivity extends AppCompatActivity{
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 availableToppingsList.add(listViewSelectedToppings.getItemAtPosition(i).toString());
                 selectedToppingsList.remove(i);
-                adapter2.notifyDataSetChanged();
-                adapter3.notifyDataSetChanged();
-                updatePrice();
+                dataNotifyChange();
             }
         });
         listViewAvailableToppings.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -68,9 +63,7 @@ public class OrderPizzaActivity extends AppCompatActivity{
                 if(checkNumberOfToppingsSelected()) {
                     selectedToppingsList.add(listViewAvailableToppings.getItemAtPosition(i).toString());
                     availableToppingsList.remove(i);
-                    adapter2.notifyDataSetChanged();
-                    adapter3.notifyDataSetChanged();
-                    updatePrice();
+                    dataNotifyChange();
                 }
             }
         });
@@ -85,6 +78,19 @@ public class OrderPizzaActivity extends AppCompatActivity{
         updatePrice();
     }
 
+    /**
+     * Helper method that Notifies the two Array Adapters that the data has changed
+     */
+    private void dataNotifyChange(){
+        adapter2.notifyDataSetChanged();
+        adapter3.notifyDataSetChanged();
+        updatePrice();
+    }
+
+    /**
+     * Helper method to prevent adding more than 7 toppings
+     * @return false if number of toppings is 7, true otherwise
+     */
     private boolean checkNumberOfToppingsSelected(){
         if(selectedToppingsList.size() == 7) {
             AlertDialog.Builder alert = new AlertDialog.Builder(this);
@@ -97,6 +103,9 @@ public class OrderPizzaActivity extends AppCompatActivity{
         return true;
     }
 
+    /**
+     * Adds all the toppings to the lists
+     */
     private void initializeToppingsList(){
         listViewAvailableToppings = findViewById(R.id.listViewAvailableToppings);
         listViewSelectedToppings = findViewById(R.id.listViewSelectedToppings);
@@ -123,6 +132,9 @@ public class OrderPizzaActivity extends AppCompatActivity{
         }
     }
 
+    /**
+     * Recalculates the price to be up to date
+     */
     private void updatePrice(){
         PizzaFactory pizzaFactory = null;
         Pizza pizza = null;
@@ -147,9 +159,10 @@ public class OrderPizzaActivity extends AppCompatActivity{
     }
 
 
-
-
-
+    /**
+     * Orders a pizza
+     * @param view View
+     */
     public void order(View view){
         PizzaFactory pizzaFactory = null;
         Pizza pizza = null;
@@ -177,16 +190,10 @@ public class OrderPizzaActivity extends AppCompatActivity{
         dialog.show();
     }
 
-    public void showStoreOrderActivity(View view){
-        Intent intent = new Intent(this, StoreOrderActivity.class);
-        startActivity(intent);
-    }
-
-    public void showCurrentOrderActivity(View view){
-        Intent intent = new Intent(this, CurrentOrderActivity.class);
-        startActivity(intent);
-    }
-
+    /**
+     * Returns the list of toppings
+     * @return the list of toppings
+     */
     public static String[] getToppingsList(){
         return selectedToppingsList.toArray(new String[0]);
     }

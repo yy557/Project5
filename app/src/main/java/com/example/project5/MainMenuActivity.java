@@ -1,26 +1,21 @@
 package com.example.project5;
 
-import android.app.AlertDialog;
+
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
-import android.widget.ListView;
-import android.widget.RadioButton;
-import android.widget.RadioGroup;
-import android.widget.TextView;
+
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
-import java.util.Arrays;
+
 
 /**
- * This is to demo the Intent class, which you can use to start another Activity.
- * @author Lily Chang
+ * The main menu of the pizza manager program
+ * @author Jake Michalowicz, Young Ye
  */
 public class MainMenuActivity extends AppCompatActivity{
     private ArrayList<Item> items = new ArrayList<>();
@@ -44,6 +39,9 @@ public class MainMenuActivity extends AppCompatActivity{
 
     }
 
+    /**
+     * Sets up the menu items
+     */
     private void setupMenuItems() {
         /*
          * Item names are defined in a String array under res/string.xml.
@@ -60,11 +58,19 @@ public class MainMenuActivity extends AppCompatActivity{
         }
     }
 
+    /**
+     * Opens the store orders activity
+     * @param view View
+     */
     public void showStoreOrderActivity(View view){
         Intent intent = new Intent(this, StoreOrderActivity.class);
         startActivity(intent);
     }
 
+    /**
+     * Opens the current order activity
+     * @param view View
+     */
     public void showCurrentOrderActivity(View view){
         Intent intent = new Intent(this, CurrentOrderActivity.class);
         startActivity(intent);

@@ -13,8 +13,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import java.util.ArrayList;
 
 /**
- * This is to demo the Intent class, which you can use to start another Activity.
- * @author Lily Chang
+ * The current orders activity
+ * @author Jake Michalowicz, Young Ye
  */
 public class CurrentOrderActivity extends AppCompatActivity {
     private static final double TAX_RATE = 0.0625;
@@ -36,7 +36,6 @@ public class CurrentOrderActivity extends AppCompatActivity {
         pizzasList = findViewById(R.id.pizzasList);
         pizzasList.setAdapter(adapter);
         displayOrdersInListView();
-
     }
 
     /**
@@ -58,6 +57,7 @@ public class CurrentOrderActivity extends AppCompatActivity {
         AlertDialog dialog = alert.create();
         dialog.show();
         order = new Order();
+        pizzasList.clearChoices();
         displayOrdersInListView();
 
     }
@@ -70,6 +70,7 @@ public class CurrentOrderActivity extends AppCompatActivity {
         while(pizzas.size() > 0){
             pizzas.remove(0);
         }
+        pizzasList.clearChoices();
         displayOrdersInListView();
         Toast.makeText(getApplicationContext(), "Order Cleared", Toast.LENGTH_LONG).show();
     }
@@ -79,9 +80,11 @@ public class CurrentOrderActivity extends AppCompatActivity {
      */
     public void removePizza(View view){
         pizzasList = findViewById(R.id.pizzasList);
-        if(pizzasList.getSelectedItemPosition() != -1) {
+        System.out.println(pizzasList.getCheckedItemPosition());
+        if(pizzasList.getCheckedItemPosition() != -1) {
             ArrayList<Pizza> pizzas = order.getPizzas();
-            order.remove(pizzas.get(pizzasList.getSelectedItemPosition()));
+            order.remove(pizzas.get(pizzasList.getCheckedItemPosition()));
+            pizzasList.clearChoices();
             displayOrdersInListView();
         }
     }
@@ -108,7 +111,6 @@ public class CurrentOrderActivity extends AppCompatActivity {
         textViewSalesTax.setText(String.valueOf(((double) ((int) ((subtotal * TAX_RATE)*100)))/100.0));
         textViewOrderTotal = findViewById(R.id.textViewOrderTotal);
         textViewOrderTotal.setText(String.valueOf(((double) ((int) ((subtotal+ subtotal * TAX_RATE)*100)))/100.0));
-
     }
 
     /**

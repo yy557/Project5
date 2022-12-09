@@ -4,7 +4,7 @@ import java.io.Serializable;
 
 /**
  * This class defines the data structure of an item to be displayed in the RecyclerView
- * @author Lily Chang
+ * @author Jake Michalowicz, Young Ye
  */
 public class Item implements Serializable {
 	private String itemName;
