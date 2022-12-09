@@ -12,7 +12,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="188dp"
         android:layout_marginTop="108dp"
-        android:text="TextView"
+        android:text="@string/textviewPH"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -31,7 +31,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="247dp"
         android:layout_marginTop="505dp"
-        android:text="TextView"
+        android:text="@string/textviewPH"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -41,7 +41,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="247dp"
         android:layout_marginTop="561dp"
-        android:text="TextView"
+        android:text="@string/textviewPH"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -51,7 +51,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="247dp"
         android:layout_marginTop="604dp"
-        android:text="TextView"
+        android:text="@string/textviewPH"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -62,7 +62,7 @@
         android:layout_marginStart="21dp"
         android:layout_marginTop="647dp"
         android:onClick="removePizza"
-        android:text="Remove Pizza"
+        android:text="@string/remove_pizza"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -72,7 +72,7 @@
         android:layout_height="78dp"
         android:layout_marginStart="140dp"
         android:onClick="placeOrder"
-        android:text="Place Order"
+        android:text="@string/place_order"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/button5" />
 
@@ -83,7 +83,7 @@
         android:layout_marginStart="256dp"
         android:layout_marginTop="648dp"
         android:onClick="clearOrder"
-        android:text="Clear Order"
+        android:text="@string/clear_order"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -93,7 +93,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="77dp"
         android:layout_marginTop="110dp"
-        android:text="Order Number"
+        android:text="@string/order_number_current"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -103,7 +103,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="75dp"
         android:layout_marginTop="505dp"
-        android:text="Subtotal"
+        android:text="@string/subtotal"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -113,7 +113,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="72dp"
         android:layout_marginTop="549dp"
-        android:text="Sales Tax"
+        android:text="@string/sales_tax"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -123,7 +123,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="73dp"
         android:layout_marginTop="595dp"
-        android:text="Order Total"
+        android:text="@string/order_total"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

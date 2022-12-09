@@ -32,4 +32,14 @@
     <string name="selected_toppings">Selected Toppings</string>
     <string name="order_number_label">Order Number:</string>
     <string name="order_total_label">Order Total:</string>
+    <string name="textviewPH">TextView</string>
+    <string name="remove_pizza">Remove Pizza</string>
+    <string name="place_order">Place Order</string>
+    <string name="clear_order">Clear Order</string>
+    <string name="order_number_current">Order Number</string>
+    <string name="subtotal">Subtotal</string>
+    <string name="sales_tax">Sales Tax</string>
+    <string name="order_total">Order Total</string>
+    <string name="store_orders_main">Store Orders</string>
+    <string name="current_orders_main">Current Orders</string>
 </resources>
